@@ -16,6 +16,8 @@ namespace Calculator.Application
             MathOperation = calculator.PrintMenuChoices();
 
             calculator.ActualCalculator(MathOperation);
+
+            Console.ReadKey();
         }
     }
 }
