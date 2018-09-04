@@ -16,17 +16,16 @@ namespace Calculator
         } 
         // Subtraction
         public double Subtract(double a, double b)
-        { 
-            return a-b;
+        {
+            return a - b;
         }
         // Multiply
         public double Multiply(double a, double b)
         {
             if (a == 0.0 || b == 0.0)
                 throw new ArgumentException("Something went wrong, or you entered 0 as a value to be multiplied");
-            double Sum;
-            Sum = a * b;
-            return Sum;
+
+            return a * b;
         }
         // Power
         public double Power(double x, double exp)
@@ -85,7 +84,7 @@ namespace Calculator
                 a = Convert.ToDouble(A);
                 B = Console.ReadLine();
                 b = Convert.ToDouble(B);
-                Console.WriteLine("The sum of " + a + "+" + b + " is: " + cal.Add(a, b));
+                Console.WriteLine($"The sum of {a} + {b} is: {cal.Add(a, b)}");
             }
 
             if (duty == 2)
@@ -94,7 +93,7 @@ namespace Calculator
                 a = Convert.ToDouble(A);
                 B = Console.ReadLine();
                 b = Convert.ToDouble(B);
-                Console.WriteLine("The sum of " + a + "-" + b + " is: " + cal.Subtract(a, b));
+                Console.WriteLine($"The sum of {a} - {b} is: {cal.Subtract(a, b)}");
             }
 
             if (duty == 3)
@@ -103,7 +102,7 @@ namespace Calculator
                 a = Convert.ToDouble(A);
                 B = Console.ReadLine();
                 b = Convert.ToDouble(B);
-                Console.WriteLine("The sum of " + a + " times " + b + " is: " + cal.Multiply(a, b));
+                Console.WriteLine($"The sum of {a} * {b} is: {cal.Multiply(a, b)}");
             }
 
             if (duty == 4)
@@ -112,11 +111,9 @@ namespace Calculator
                 a = Convert.ToDouble(A);
                 B = Console.ReadLine();
                 b = Convert.ToDouble(B);
-                Console.WriteLine("The sum of x " + a + " to the power of " + b + " is: " + cal.Power(a, b));
+                Console.WriteLine($"The sum of x {a} ^ {b} is: {cal.Power(a, b)}");
             }
-
         }
-
     }
 }
 
