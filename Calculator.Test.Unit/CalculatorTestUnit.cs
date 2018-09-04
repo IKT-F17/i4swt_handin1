@@ -11,41 +11,57 @@ namespace Calculator.Test.Unit
     [Author("Group 7 (Frederik, John, Mark og Tonni)")]
     public class CalculatorTestUnit
     {
-        public Calculator uut; // <-- Member variable kunne også være private.
+        private Calculator _uut;
+
+    // Test Setup:
         [SetUp]
         public void Setup()
         {
-            uut = new Calculator();
-        }
-        
-        // Add Test
-        [Test]
-        public void Add_Add2And4_Returns6()
-        {
-            Assert.That(uut.Add(2,4), Is.EqualTo(6));
+            _uut = new Calculator();
         }
 
-        // Subtract Test
-        [Test]
-        public void Sub_Sub5from9_Returns4()
+    // Add Test
+        [TestCase(2, 8, 10)]
+        [TestCase(-2, 8, 6)]
+        [TestCase(2, -8, -6)]
+        [TestCase(-2, -8, -10)]
+        public void Add_Test(double a, double b, double result)
         {
-            Assert.That(uut.Subtract(9, 5), Is.EqualTo(4));
+            Assert.That(_uut.Add(a, b), Is.EqualTo(result));
         }
 
-        // Multiply Test
-        [Test]
-        public void Mul_Mul2and5_Returns10()
+    // Subtract Test:
+        [TestCase(10, 6, 4)]
+        [TestCase(-10, 6, -16)]
+        [TestCase(10, -6, 16)]
+        [TestCase(-10, -6, -4)]
+        public void Subtract_Test(double a, double b, double result)
         {
-            Assert.That(uut.Multiply(2,5), Is.EqualTo(10));
+            Assert.That(_uut.Subtract(a, b), Is.EqualTo(result));
         }
 
-        // Power Test
-        [Test]
-        public void Pow_Pow2and2_Returns4()
+    // Multiply Test:
+        [TestCase(7, 2, 14)]
+        [TestCase(-7, 2, -14)]
+        [TestCase(7, -2, -14)]
+        [TestCase(-7, -2, 14)]
+        public void Multiply_Test(double a, double b, double result)
         {
-            Assert.That(uut.Power(2, 2), Is.EqualTo(4));
+            Assert.That(_uut.Multiply(a, b), Is.EqualTo(result));
+        }
+
+    // Power Test:
+        [TestCase(2, 2, 4)]
+        [TestCase(-2, 2, 4)]
+        [TestCase(2, -2, 0.25)]
+        [TestCase(-2, -2, 0.25)]
+        [TestCase(2, 3, 8)]
+        [TestCase(-2, 3, -8)]
+        [TestCase(2, -3, 0.125)]
+        [TestCase(-2, -3, -0.125)]
+        public void Power_Test(double a, double b, double result)
+        {
+            Assert.That(_uut.Power(a, b), Is.EqualTo(result));
         }
     }
-
-  
 }

@@ -9,17 +9,19 @@ namespace Calculator
 {
     public class Calculator
     {   
-        // Addition
+    // Addition
         public double Add(double a, double b)
         {
             return a + b;
         } 
-        // Subtraction
+        
+    // Subtraction
         public double Subtract(double a, double b)
         {
             return a - b;
         }
-        // Multiply
+        
+    // Multiply
         public double Multiply(double a, double b)
         {
             if (a == 0.0 || b == 0.0)
@@ -27,7 +29,8 @@ namespace Calculator
 
             return a * b;
         }
-        // Power
+    
+    // Power
         public double Power(double x, double exp)
         {
             return Math.Pow(x, exp); 

@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test1", "test1\test1.csproj", "{CF3A938A-E5DA-4F50-8525-FE39B7D4F050}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "Calculator\Calculator.csproj", "{81699F17-52CA-43FA-AC41-4E05999253B2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.Application", "Calculator.Application\Calculator.Application.csproj", "{57A6E2B8-109B-4DBB-A27E-BFC9D734C73A}"
@@ -17,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CF3A938A-E5DA-4F50-8525-FE39B7D4F050}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CF3A938A-E5DA-4F50-8525-FE39B7D4F050}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CF3A938A-E5DA-4F50-8525-FE39B7D4F050}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CF3A938A-E5DA-4F50-8525-FE39B7D4F050}.Release|Any CPU.Build.0 = Release|Any CPU
 		{81699F17-52CA-43FA-AC41-4E05999253B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{81699F17-52CA-43FA-AC41-4E05999253B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81699F17-52CA-43FA-AC41-4E05999253B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
