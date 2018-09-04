@@ -8,7 +8,7 @@ using NUnit.Framework;
 namespace Calculator.Test.Unit
 {
     [TestFixture]
-    [Author("Group 7")]
+    [Author("Group 7 (Frederik, John, Mark og Tonni)")]
     public class CalculatorTestUnit
     {
         public Calculator uut; // <-- Member variable kunne også være private.
