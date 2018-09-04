@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 
 namespace Calculator.Test.Unit
-{
+{ 
     [TestFixture]
     [Author("Group 7 (Frederik, John, Mark og Tonni)")]
     public class CalculatorTestUnit
