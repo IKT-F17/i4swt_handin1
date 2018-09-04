@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,11 @@ namespace Calculator
 {
     public class Calculator
     {   
-    // Addition
+        public double Accumulator { get; private set; } // <-- Class-property/"Memberdata"
+        
+        public Calculator() => Accumulator = 0; // initialized to 0 to begin with, since no calculations has been made. 
+        
+        // Addition
         public double Add(double a, double b)
         {
             return a + b;
@@ -88,6 +93,7 @@ namespace Calculator
                 B = Console.ReadLine();
                 b = Convert.ToDouble(B);
                 Console.WriteLine($"The sum of {a} + {b} is: {cal.Add(a, b)}");
+                Accumulator = cal.Add(a, b);
             }
 
             if (duty == 2)
@@ -97,6 +103,7 @@ namespace Calculator
                 B = Console.ReadLine();
                 b = Convert.ToDouble(B);
                 Console.WriteLine($"The sum of {a} - {b} is: {cal.Subtract(a, b)}");
+                Accumulator = cal.Subtract(a, b);
             }
 
             if (duty == 3)
@@ -106,6 +113,7 @@ namespace Calculator
                 B = Console.ReadLine();
                 b = Convert.ToDouble(B);
                 Console.WriteLine($"The sum of {a} * {b} is: {cal.Multiply(a, b)}");
+                Accumulator = cal.Multiply(a, b);
             }
 
             if (duty == 4)
@@ -115,6 +123,7 @@ namespace Calculator
                 B = Console.ReadLine();
                 b = Convert.ToDouble(B);
                 Console.WriteLine($"The sum of x {a} ^ {b} is: {cal.Power(a, b)}");
+                Accumulator = cal.Power(a, b);
             }
         }
     }
