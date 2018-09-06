@@ -64,7 +64,7 @@ namespace Calculator.Test.Unit
         [Test]
         public void Divide_DivideByZeroException()
         {
-            Assert.That(_uut.Divide(10, 0), Throws.TypeOf<DivideByZeroException>());
+            Assert.That(() => _uut.Divide(10, 0), Throws.TypeOf<DivideByZeroException>());
         }
 
     // Power Test:

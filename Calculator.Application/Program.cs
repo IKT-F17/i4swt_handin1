@@ -11,10 +11,9 @@ namespace Calculator.Application
     {
         static void Main(string[] args)
         {
-           Calculator calculator = new Calculator();
+            Calculator calculator = new Calculator();
 
-            int MathOperation;
-            MathOperation = calculator.PrintMenuChoices();
+            int MathOperation = calculator.PrintMenuChoices();
 
             calculator.ActualCalculator(MathOperation);
             Console.WriteLine($"Last result of the math operation {calculator.Accumulator}");

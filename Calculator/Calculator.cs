@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using NUnit.Framework;
 
 namespace Calculator
 {
@@ -34,18 +35,10 @@ namespace Calculator
     // Divider
         public double Divide(double a, double b)
         {
-            try
-            {
-                return a / b;
-            }
+            if (b == 0)
+                throw new DivideByZeroException();
 
-            catch (DivideByZeroException e)
-            {
-                Console.WriteLine("Error you made a division with ZERO");
-                Console.WriteLine(e.Message);
-                return -42;
-            }
-
+            return a / b;
         }
 
         // Power
@@ -70,12 +63,12 @@ namespace Calculator
 
             MenuChoice = Console.ReadLine();
             actualChoice = Convert.ToInt32(MenuChoice);
-           
+
             switch (actualChoice)
             {
                 case 1:
                     Console.WriteLine("you have chosen to add two value, now enter them concurrently");
-                    funcReturn = 1; 
+                    funcReturn = 1;
                     break;
                 case 2:
                     Console.WriteLine("you have chosen to subtract two values from each other, now enter them concurrently");
