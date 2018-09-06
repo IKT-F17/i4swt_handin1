@@ -50,6 +50,23 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Multiply(a, b), Is.EqualTo(result));
         }
 
+    // Divide Test:
+        [TestCase(10, 2, 5)]
+        [TestCase(-10, 2, -5)]
+        [TestCase(10, -2, -5)]
+        [TestCase(-10, -2, 5)]
+        public void Divide_Test(double a, double b, double result)
+        {
+            Assert.That(_uut.Divide(a, b), Is.EqualTo(result));
+        }
+    
+    // Divide by zero Test:
+        [Test]
+        public void Divide_DivideByZeroException()
+        {
+            Assert.That(_uut.Divide(10, 0), Throws.TypeOf<DivideByZeroException>());
+        }
+
     // Power Test:
         [TestCase(2, 2, 4)]
         [TestCase(-2, 2, 4)]
