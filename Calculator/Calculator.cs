@@ -29,13 +29,26 @@ namespace Calculator
     // Multiply
         public double Multiply(double a, double b)
         {
-            if (a == 0.0 || b == 0.0)
-                throw new ArgumentException("Something went wrong, or you entered 0 as a value to be multiplied");
-
             return a * b;
         }
-    
-    // Power
+    // Divider
+        public double Divide(double a, double b)
+        {
+            try
+            {
+                return a / b;
+            }
+
+            catch (DivideByZeroException e)
+            {
+                Console.WriteLine("Error you made a division with ZERO");
+                Console.WriteLine(e.Message);
+                return -42;
+            }
+
+        }
+
+        // Power
         public double Power(double x, double exp)
         {
             return Math.Pow(x, exp); 
@@ -53,6 +66,7 @@ namespace Calculator
             Console.WriteLine("2. Subtract one double value from another");
             Console.WriteLine("3. Multiply two double values");
             Console.WriteLine("4. Find a value to the power of n value");
+            Console.WriteLine("5. Divide a double value, with another");
 
             MenuChoice = Console.ReadLine();
             actualChoice = Convert.ToInt32(MenuChoice);
@@ -75,6 +89,11 @@ namespace Calculator
                     Console.WriteLine("you have chosen the 'to the power' function, now enter them concurrently");
                     funcReturn = 4;
                     break;
+                case 5:
+                    Console.WriteLine("you have chosen the divider function, now enter them concurrently");
+                    funcReturn = 5;
+                    break;
+
             }
 
             return funcReturn;
@@ -125,6 +144,16 @@ namespace Calculator
                 Console.WriteLine($"The sum of x {a} ^ {b} is: {cal.Power(a, b)}");
                 Accumulator = cal.Power(a, b);
             }
+            if (duty == 5)
+            {
+                A = Console.ReadLine();
+                a = Convert.ToDouble(A);
+                B = Console.ReadLine();
+                b = Convert.ToDouble(B);
+                Console.WriteLine($"The sum of {a} / {b} is: {cal.Divide(a, b)}");
+                Accumulator = cal.Divide(a, b);
+            }
+
         }
     }
 }
